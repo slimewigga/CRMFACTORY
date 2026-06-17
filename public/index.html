@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход — Деньги-Бабки CRM</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/ui.css">
+  <link rel="stylesheet" href="/css/auth.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+  <div class="auth-container">
+    <div class="auth-brand">
+      <span class="auth-logo">💰</span>
+      <h1>Деньги-Бабки</h1>
+      <p>AI Lab CRM — ваша база для идей и проектов</p>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Вход</button>
+        <button class="auth-tab" data-tab="register">Регистрация</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <div class="form-group">
+          <label>Логин или email</label>
+          <input class="form-input" id="loginInput" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input class="form-input" type="password" id="loginPassword" required autocomplete="current-password">
+        </div>
+        <div class="auth-error" id="loginError"></div>
+        <button type="submit" class="btn btn-primary btn-block">Войти</button>
+      </form>
+
+      <form id="registerForm" class="auth-form">
+        <div class="form-group">
+          <label>Имя</label>
+          <input class="form-input" id="regName" required placeholder="Как вас называть">
+        </div>
+        <div class="form-group">
+          <label>Логин</label>
+          <input class="form-input" id="regUsername" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input class="form-input" type="email" id="regEmail" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input class="form-input" type="password" id="regPassword" required minlength="6" autocomplete="new-password">
+        </div>
+        <div class="auth-error" id="registerError"></div>
+        <button type="submit" class="btn btn-primary btn-block">Создать аккаунт</button>
+      </form>
+
+      <p class="auth-hint">Первый аккаунт: <strong>admin</strong> / <strong>admin123</strong></p>
+    </div>
+  </div>
+
+  <script src="/js/ui.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>
