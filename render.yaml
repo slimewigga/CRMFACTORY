@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dengi-babki-crm
+    runtime: node
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: /var/data/crm.db
+    disk:
+      name: crm-data
+      mountPath: /var/data
+      sizeGB: 1
